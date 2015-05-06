@@ -26,7 +26,10 @@ module IpaReader
     end
 
     def name
-      plist["CFBundleDisplayName"]
+      if plist["CFBundleDisplayName"]
+        plist["CFBundleDisplayName"]
+      end
+      plist["CFBundleName"]
     end
 
     def target_os_version
