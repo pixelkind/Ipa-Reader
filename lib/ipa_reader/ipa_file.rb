@@ -54,11 +54,6 @@ module IpaReader
       elsif plist["CFBundleIconFile"]
         data = read_file(Regexp.new("#{plist["CFBundleIconFile"]}$"))
       end
-      if data
-        IpaReader::PngFile.normalize_png(data)
-      else
-        nil
-      end
       data
     end
 
